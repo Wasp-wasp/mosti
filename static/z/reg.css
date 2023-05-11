@@ -1,0 +1,133 @@
+*
+{
+  padding: 0; margin: 0;
+}
+.about_red{
+  padding-top: 160px;
+  padding-bottom: 320px;
+  background: #FFFBF5;
+  position: relative;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  line-height: 3;
+  font-size: 1rem;
+}
+
+.header{
+  display: flex; //на уровне с картинкой
+  align-items: center;
+  justify-content: space-between; //выравнивание по ширине
+  padding: 30px 15px; //отступы
+  box-sizing: border-box;
+  max-width: 1830px;
+  max-width: 0 auto;
+}
+
+.btnn{
+  margin-top: 20px;
+  display: flex;
+  list-style: none; //убираем маркеры списка
+}
+
+.btnn li{
+  margin-left: 64px; // отступы
+}
+
+.btnn li a{
+  background: rgba(182, 179, 179, 0.2);
+  color: black;
+  text-decoration: none;
+  border: 1px solid  black;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.btnn li a:hover{
+  color: white;
+  text-decoration: none;
+  border: 1px solid  white;
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.image{
+  width: 70px;
+  height: 70px;
+  padding: 10px 20px;
+}
+
+.header__wrap{
+  height: 300px;
+  background: url(../image/12.jpg);
+   background-size: cover;
+}
+
+.box{
+  width: 300px;
+  padding: 40px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  /*transform: translate(-50%, -50%);*/
+  background: rgba(182, 181, 181, 0.54);
+  text-align: center;
+  border-radius: 20px;
+}
+
+.box:hover{
+  box-shadow: 1px 1px 15px 1px rgba(182, 181, 181, 0.54);
+  transform: 0.45s;
+}
+
+.box h1{
+  color: white;
+  text-transform: uppercase; //все буквы заглавные
+  font-weight: 500px;
+}
+
+.but{
+  color: white;
+  border: 0;
+  background: white;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid white;
+  padding: 10px 10px;
+  width: 200px;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.50s;
+}
+
+.but:focus{
+  width: 260px;
+  border-color: white;
+}
+
+.button{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid white;
+  padding: 14px 40px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.aa{
+  background: rgba(182, 179, 179, 0.2);
+  color: white;
+  text-decoration: none;
+  border: 1px solid  white;
+  border-radius: 30px;
+  padding: 10px 20px;
+}

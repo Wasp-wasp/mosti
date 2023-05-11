@@ -1,0 +1,69 @@
+{% extends 'base-page.html' %}
+{% load static %}
+
+{% block title %}
+    Наши работы
+{% endblock title %}
+
+{% block container %}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static '/images/img/favicon.png'  %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css'  %}">
+
+</head>
+
+<body>
+
+
+
+
+    <!-- gallery_start -->
+    <div class="gallery_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-75">
+                        <h3>Photo Gallery</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single_gallery big_img">
+            <a class="popup-image" href="{% static '/images/img/1.png' %}"></a>
+             <img src="{% static '/images/img/1.png' %}" alt="">
+        </div>
+        <div class="single_gallery small_img">
+             <a class="popup-image" href="{% static '/images/img/2.png' %}"></a>
+             <img src="{% static '/images/img/2.png' %}" alt="">
+        </div>
+        <div class="single_gallery small_img">
+             <a class="popup-image" href="{% static '/images/img/3.png' %}"></a>
+             <img src="{% static '/images/img/3.png' %}" alt="">
+        </div>
+
+        <div class="single_gallery small_img">
+             <a class="popup-image" href="{% static '/images/img/4.png' %}"></a>
+             <img src="{% static '/images/img/4.png' %}" alt="">
+        </div>
+        <div class="single_gallery small_img">
+             <a class="popup-image" href="{% static '/images/img/5.png' %}"></a>
+             <img src="{% static '/images/img/5.png' %}" alt="">
+        </div>
+        <div class="single_gallery big_img">
+           <a class="popup-image" href="{% static '/images/img/6.png' %}"></a>
+             <img src="{% static '/images/img/6.png' %}" alt="">
+        </div>
+    </div>
+    
+    <!-- gallery end -->
+
+
+{% endblock container %}

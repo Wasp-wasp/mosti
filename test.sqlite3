@@ -1,0 +1,41 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "user" (
+	"id"	INTEGER,
+	"username"	TEXT,
+	"email"	TEXT,
+	"password"	char
+);
+CREATE TABLE IF NOT EXISTS "product" (
+	"id"	INTEGER,
+	"name"	TEXT,
+	"code"	TEXT,
+	"price"	BLOB,
+	"unit"	TEXT,
+	"image_url"	TEXT,
+	"note"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "payment" (
+	"id"	INTEGER,
+	"user"	TEXT,
+	"amount"	INTEGER,
+	"time"	BLOB,
+	"comment"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "order" (
+	"id"	INTEGER,
+	"user"	TEXT,
+	"status"	TEXT,
+	"amount"	BLOB,
+	"creator_time"	REAL,
+	"payment"	BLOB,
+	"comment"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "OrderItem" (
+	"id"	INTEGER,
+	"order"	INTEGER,
+	"product"	INTEGER,
+	"quantity"	INTEGER,
+	"price"	BLOB,
+	"discount"	BLOB
+);
+COMMIT;
