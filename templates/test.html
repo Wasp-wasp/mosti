@@ -22,19 +22,20 @@
 <body class="container">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-    {% if product.count > 0 %}
+    {% if obj.count > 0 %}
     <h2>Список Продуктов</h2>
     <table>
         <thead><th>Id</th><th>Имя</th><th>Возраст</th><th></th></thead>
 
-        {% for Product in product %}
+        {% for Object in obj %}
         <tr>
-            <td>{{ Product.id }}</td>
-            <td>{{ Product.name }}</td>
-            <td>{{ Product.code }}</td>
+            <td>{{ Object.id_object }}</td>
+            <td>{{ Object.name_object }}</td>
+            <td>{{ Object.code }}</td>
 
+            <td><a href="{% url 'buy' Object.id_object %}">Изменить</a> </td>
+            <td><a href="">Изменить</a> | <a href="">Удалить</a></td>
 
-            <td><a href="{% url 'buy' Product.id %}">Изменить</a> | <a href="delete/{{person.id}}">Удалить</a></td>
         </tr>
         {% endfor %}
     </table>

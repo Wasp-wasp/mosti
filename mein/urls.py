@@ -21,14 +21,18 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from mein import views as user_views
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     path('about/', views.about, name='about'),
-    path('test/', views.test),
-    path('buy/<int:id>/', views.buy, name='buy'),
-    path('auth/', include('authentification.urls')),
+    path('test/', views.test, name='test'),
+    path('buy/<int:id_object>/', views.buy, name='buy'),
+    path('pdf', views.getpdf)
 
-    path('<pk>/pdf', views.users_render_pdf_view, name='user_pdf_view'),
+
+    # path('auth/', include('authentification.urls')),
+    #
+    # path('<pk>/pdf', views.users_render_pdf_view, name='user_pdf_view'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
