@@ -28,7 +28,7 @@
   <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
     <li><a href="/" class="nav-link px-2 link-secondary">Главная</a></li>
     <li><a href="{% url 'test' %}" class="nav-link px-2">Услуги</a></li>
-        <li><a href="" class="nav-link px-2">О нас</a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2">О нас</a></li>
 
     <li><a href="#" class="nav-link px-2">Контакты</a></li>
   </ul>
@@ -38,7 +38,7 @@
             {{ user.username }}
       <a href="{% url 'logout' %}">Выйти</a>
         {% else %}
-            <button type="button" class="btn btn-primary"><a class="btn-outline-primary me-2" href=""> Войти </a> </button>
+            <button type="button" class="btn btn-primary"><a class="btn-outline-primary me-2" href="{% url 'login' %}"> Войти </a> </button>
            <!-- <button type="button" class="btn btn-primary"><a class="btn-primary" href=""> Регистрация </a></button>-->
         {% endif %}
 
@@ -57,8 +57,8 @@
       <div class="col-6 col-md-2 mb-3">
         <h5>Информация</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">О нас</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Услуги</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'about' %}" class="nav-link p-0 text-body-secondary">О нас</a></li>
+          <li class="nav-item mb-2"><a href="{% url 'test' %}" class="nav-link p-0 text-body-secondary">Услуги</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Условия и положения</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Политика конфидециальности</a></li>
         </ul>

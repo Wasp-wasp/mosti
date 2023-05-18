@@ -2,18 +2,21 @@ from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from authentification.forms import LoginForm, RegisterForm
-from shop.models import Product
+from shop.models import Object
+
+
+def about(request):
+    return render(request, "about-us.html")
 
 
 def test(request):
-    product = Product.objects.all()
-    return render(request, "test.html", {"product": product})
+    obj = Object.objects.all()
+    return render(request, "test.html", {"obj": obj})
 
 
 def pdf(request):
-    product = Product.objects.all()
+    product = Object.objects.all()
     return render(request, {"product": product})
-
 
 
 def login_user(request):
@@ -65,3 +68,18 @@ class RegisterView(TemplateView):
 def logout_user(request):
     logout(request)
     return redirect('index')
+
+
+from reportlab.pdfgen import canvas
+from django.http import HttpResponse
+
+
+def getpdf(request):
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="file.pdf"'
+    p = canvas.Canvas(response)
+    p.setFont("Times-Roman", 55)
+    p.drawString(100, 700, "Hello, Javatpoint.")
+    p.showPage()
+    p.save()
+    return response

@@ -20,7 +20,8 @@ from authentification import views
 urlpatterns = [
     path('login/', views.login_user, name='login'),
     path('test/', views.test, name='test'),
+    path('about/', views.about, name='about'),
     path('register/', views.RegisterView.as_view(), name='register'),
     path('logout/', views.logout_user, name='logout'),
-
+    path('pdf', views.getpdf, name='pdf'),
 ]

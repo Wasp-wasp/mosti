@@ -28,10 +28,10 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('test/', views.test, name='test'),
     path('buy/<int:id_object>/', views.buy, name='buy'),
-    path('pdf', views.getpdf)
+    path('pdf', views.getpdf, name='pdf'),
 
 
-    # path('auth/', include('authentification.urls')),
+    path('auth/', include('authentification.urls')),
     #
     # path('<pk>/pdf', views.users_render_pdf_view, name='user_pdf_view'),
 ]
