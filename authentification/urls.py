@@ -23,5 +23,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('register/', views.RegisterView.as_view(), name='register'),
     path('logout/', views.logout_user, name='logout'),
-    path('pdf', views.getpdf, name='pdf'),
+    path('pdf/', views.getpdf, name='pdf'),
+    path('pdf/', views.getpdf, name='pdf'),
 ]

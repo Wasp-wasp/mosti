@@ -70,6 +70,8 @@ def logout_user(request):
     return redirect('index')
 
 
+
+
 from reportlab.pdfgen import canvas
 from django.http import HttpResponse
 

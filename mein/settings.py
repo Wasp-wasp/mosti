@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-sld!hz2u_a@@vs#(e91c7m!d(b5sz9x!2ova2u5m3#)2(tjvp(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['salemsdsd.pythonanywhere.com', ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +44,12 @@ INSTALLED_APPS = [
     'shop',
 
 ]
+
+# config/settings.py
+RECIPIENTS_EMAIL = ['manager@mysite.com']   # замените на свою почту
+DEFAULT_FROM_EMAIL = 'admin@mysite.com'  # замените на свою почту
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

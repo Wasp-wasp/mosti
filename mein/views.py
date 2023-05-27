@@ -1,17 +1,12 @@
+import tempfile
 from urllib import response
 
 from shop.models import *
-from django.http import HttpResponseRedirect
-from django.http import HttpResponseNotFound
+
 from django.http import HttpResponse
-from django.template.loader import get_template
-from xhtml2pdf import pisa
-from django.views.generic import ListView
+
 
 from django.shortcuts import render, get_object_or_404
-import io
-from django.http import FileResponse
-from reportlab.pdfgen import canvas
 
 
 #
@@ -56,6 +51,9 @@ def about(request):
     return render(request, "about-us.html")
 
 
+
+
+
 # def create_pdf(request):
 #     product = Product.objects.all()
 #     return render(request, "pdf.html", {"product": product})
@@ -96,8 +94,7 @@ def getpdf(request):
     response['Content-Disposition'] = 'attachment; filename="file.pdf"'
     p = canvas.Canvas(response)
     p.setFont("Times-Roman", 55)
-    p.drawString(100, 700, "Hello, Javatpoint.")
+    p.drawString(100, 700, "")
     p.showPage()
     p.save()
     return response
-

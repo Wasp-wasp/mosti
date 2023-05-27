@@ -21,6 +21,8 @@ class LoginForm(forms.Form):
         return cleaned_data
 
 
+
+
 class RegisterForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
