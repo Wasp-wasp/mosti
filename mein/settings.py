@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'wkhtmltopdf',
     'django_bootstrap_icons',
     'shop',
+    'mein',
 
 ]
 
