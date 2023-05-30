@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-sld!hz2u_a@@vs#(e91c7m!d(b5sz9x!2ova2u5m3#)2(tjvp(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['salemsdsd.pythonanywhere.com',]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -46,10 +46,12 @@ INSTALLED_APPS = [
 
 ]
 
-# config/settings.py
-RECIPIENTS_EMAIL = ['manager@mysite.com']   # замените на свою почту
-DEFAULT_FROM_EMAIL = 'admin@mysite.com'  # замените на свою почту
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '85ddcd08f42b51'
+EMAIL_HOST_PASSWORD = '767c05ae97aa25'
+EMAIL_PORT = '2525'
+
+
 
 
 MIDDLEWARE = [
@@ -96,7 +98,7 @@ WSGI_APPLICATION = 'mein.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'obj',
+        'NAME': 'object',
         'USER': 'root',
         'PASSWORD': '12345',
         'HOST': '127.0.0.1',

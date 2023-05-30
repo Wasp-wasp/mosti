@@ -18,7 +18,7 @@
 
 <body>
 
-<header class="site-header sticky-top py-1 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between <!--py-3--> mb-4 border-bottom">
+<header style="height: 90px;" class="site-header sticky-top py-1 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between <!--py-3--> border-bottom">
   <div class="col-md-3 mb-2 mb-md-0">
     <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
       <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
@@ -26,21 +26,25 @@
   </div>
 
   <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-    <li><a href="/" class="nav-link px-2 link-secondary">Главная</a></li>
-    <li><a href="{% url 'test' %}" class="nav-link px-2">Услуги</a></li>
-        <li><a href="{% url 'about' %}" class="nav-link px-2">О нас</a></li>
+    <li><a href="/" class="nav-link px-2 text-white">Главная</a></li>
+    <li><a href="{% url 'proects' %}" class="nav-link px-2 text-white">Проекты</a></li>
 
-    <li><a href="#" class="nav-link px-2">Контакты</a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 text-white">О нас</a></li>
+
+    <li><a href="#" class="nav-link px-2 text-white">Контакты</a></li>
+
+       {% if user.is_authenticated  %}
+            {{ user.username }}
+            <li><a href="{% url 'test' %}" class="nav-link px-2 text-white">Услуги</a></li>
+            <li><a href="{% url 'shedule' %}" class="nav-link px-2 text-white">Графики</a></li>
+            <a href="{% url 'logout' % }" style="height: 40px;">Выйти</a>
+        {% else %}
+            <button type="button" class="btn btn-warning"><a  href="{% url 'login' %}"  style="height: 30px;"> Войти </a> </button>
+           <!-- <button type="button" class="btn btn-primary"><a class="btn-primary" href=""> Регистрация </a></button>-->
+        {% endif %}
   </ul>
 
   <div class="col-md-3 text-end">
-        {% if user.is_authenticated  %}
-            {{ user.username }}
-      <a href="{% url 'logout' %}">Выйти</a>
-        {% else %}
-            <button type="button" class="btn btn-primary"><a class="btn-outline-primary me-2" href="{% url 'login' %}"> Войти </a> </button>
-           <!-- <button type="button" class="btn btn-primary"><a class="btn-primary" href=""> Регистрация </a></button>-->
-        {% endif %}
 
   </div>
 </header>
@@ -81,7 +85,7 @@
         </ul>
       </div>
 
-      <div class="col-md-5 offset-md-1 mb-3">
+     <!-- <div class="col-md-5 offset-md-1 mb-3">
         <form>
 
           <h5>Оставьте заявку на консультацию</h5>
@@ -92,7 +96,7 @@
             <button class="btn btn-primary" type="button">Жду звонка</button>
           </div>
         </form>
-      </div>
+      </div>-->
     </div>
 
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">

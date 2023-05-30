@@ -23,16 +23,22 @@ from django.conf import settings
 from mein import views as user_views
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('admin/', admin.site.urls),
-    path('about/', views.about, name='about'),
-    path('test/', views.test, name='test'),
-    path('buy/<int:id_object>/', views.buy, name='buy'),
-    path('pdf', views.getpdf, name='pdf'),
+                  path('', views.index, name='index'),
+                  path('admin/', admin.site.urls),
+                  path('logout/', views.logout_user, name='logout'),
+                  path('login/', views.login_user, name='login'),
+                  path('about/', views.about, name='about'),
+                  path('test/', views.test, name='test'),
+                  path('proects/', views.proects, name='proects'),
+                  path('km/', views.km, name='km'),
+                  path('kozm/', views.kozm, name='kozm'),
+                  path('buy/<int:id_object>/', views.buy, name='buy'),
+                  path('pdf', views.getpdf, name='pdf'),
+                  path('shedule', views.shedule, name='shedule'),
+                  path('send_mail/', views.send_email, name="send_mail"),
 
-
-    path('auth/', include('authentification.urls')),
-    #
-    # path('<pk>/pdf', views.users_render_pdf_view, name='user_pdf_view'),
-]
+                  # path('auth/', include('authentification.urls')),
+                  #
+                  # path('<pk>/pdf', views.users_render_pdf_view, name='user_pdf_view'),
+              ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -2,21 +2,32 @@ from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from authentification.forms import LoginForm, RegisterForm
-from shop.models import Object
+from shop.models import *
+from forms import ContactForm
+
+from authentification.forms import ContactForm
+from django.core.mail import send_mail
+
+
+def send_email(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            print("w")
+            send_mail("the contact for, ", 'this is a message', 'wfw@gmwil.com', ['codejfe@gmail.com'])
+            return redirect('index.html')
+    else:
+        form = ContactForm()
+    return render(request, "email.html", {
+        'form': form
+    })
 
 
 def about(request):
     return render(request, "about-us.html")
 
 
-def test(request):
-    obj = Object.objects.all()
-    return render(request, "test.html", {"obj": obj})
 
-
-def pdf(request):
-    product = Object.objects.all()
-    return render(request, {"product": product})
 
 
 def login_user(request):
@@ -70,8 +81,6 @@ def logout_user(request):
     return redirect('index')
 
 
-
-
 from reportlab.pdfgen import canvas
 from django.http import HttpResponse
 
@@ -85,3 +94,61 @@ def getpdf(request):
     p.showPage()
     p.save()
     return response
+
+
+from django.shortcuts import render
+
+from django.shortcuts import render
+from django.urls import reverse
+from django.http import HttpResponseRedirect, HttpResponse
+from django.views.generic import TemplateView
+
+from django.core.mail import send_mail
+
+
+def home(request):
+    return render(request, 'home.html')
+
+
+# class Home(TemplateView):
+#     template_name = 'home.html'
+
+
+from django.core.mail import BadHeaderError, send_mail
+from django.http import HttpResponse, HttpResponseRedirect
+
+
+def send_email(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+
+        if form.is_valid():
+
+            subject = form.cleaned_data['subject']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            send_mail(subject, email, message, ['daryawaspd@gmail.com'])
+            return redirect('index.html')
+    else:
+        form = ContactForm()
+    return render(request, "email.html", {
+        'form': form
+    })
+
+
+# subject = request.POST.get("subject", "")
+# message = request.POST.get("message", "")
+# from_email = request.POST.get("from_email", "")
+# if subject and message and from_email:
+#     try:
+#         send_mail(subject, message, from_email, ["admin@example.com"])
+#     except BadHeaderError:
+#         return HttpResponse("Invalid header found.")
+#     return HttpResponseRedirect("/contact/thanks/")
+# else:
+#     # In reality we'd use a form class
+#     # to get proper validation errors.
+#     return HttpResponse("Make sure all fields are entered and valid.")
+def index(request):
+    return render(request, "index.html")

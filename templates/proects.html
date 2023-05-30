@@ -1,0 +1,66 @@
+{% extends 'base-page.html' %}
+{% load bootstrap_icons %}
+
+{% load static %}
+
+{% block title %}
+    Проекты
+{% endblock title %}
+
+{% block container %}
+
+<head >
+    <meta charset="utf-8" />
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'bootstrap_icons/css/bootstrap_icons.css' %}">
+
+</head>
+
+
+
+<body class="">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+<div class="container">
+    <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">КАРАМЫШЕВСКИЙ МОСТ В СОСТАВЕ СЕВЕРО-ЗАПАДНОЙ ХОРДЫ</h3>
+          <div class="mb-1 text-body-secondary">Ноябрь 2019</div>
+          <p class="card-text mb-auto">Объект стал финальным участком, объединившим Северо-Западную хорду от Дмитровского шоссе до Мичуринского проспекта, благодаря чему создана магистраль..
+              непрерывного движения от ул. Нижние Мневники и ул. Народного Ополчения до развязки с проспектом Маршала Жукова..</p>
+          <a href="{% url 'km' %}" class="stretched-link">Подробнее</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+              <img src="{% static 'images/km2.jpg' %}" class="bd-placeholder-img" width="300" height="350">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+
+          <h3 class="mb-0">УДС К ПАРКУ «ОСТРОВ МЕЧТЫ». КОЖУХОВСКИЙ МОСТ</h3>
+          <div class="mb-1 text-body-secondary">25 декабря</div>
+          <p class="mb-auto">Результатом ввода объекта в эксплуатацию стало создание качественной транспортной инфраструктуры в Нагатинской пойме. Мост через Кожуховский затон соединил территорию ЗИЛа и район Печатники. Обеспечена транспортная доступность парка развлечений «Остров мечты».</p>
+           <a href="{% url 'kozm' %}" class="stretched-link">Подробнее</a>
+        </div>
+       <div class="col-auto d-none d-lg-block">
+              <img src="{% static 'images/km2.jpg' %}" class="bd-placeholder-img" width="300" height="350">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+{% endblock container %}
+
+
+

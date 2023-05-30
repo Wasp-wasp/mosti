@@ -19,15 +19,28 @@
 
 
 
-<body class="container">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<body >
+<div class="container">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <form method="POST">
         {% csrf_token %}
+
+
           <p>  {{ obj.name_object }} </p>
           <p>  {{ obj.id_object }} </p>
+            <p>{{ obj.id_classification }}</p>
+            <p>{{ obj.id_address }}</p>
+            <p>{{ obj.id_status }}</p>
+            <p>{{ obj.description }}</p>
+
+                    <img src="{{ obj.photo.url }}" alt="продукт">
+
+
     <a href="{% url 'pdf' %}" target="_blank"><button class="btn btn-primary">Download pdf</button></a>
 
     </form>
+</div>
+
 </body>
 
 

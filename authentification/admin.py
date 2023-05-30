@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from shop.models import Object, User
+from shop.models import Bridge, User
 
 
 class ObjectAdmin(admin.ModelAdmin):
@@ -10,5 +10,5 @@ class ObjectAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(Object, ObjectAdmin)
+admin.site.register(Bridge, ObjectAdmin)
 admin.site.register(User)

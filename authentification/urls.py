@@ -18,11 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 from authentification import views
 urlpatterns = [
+    path('', views.index, name='index'),
     path('login/', views.login_user, name='login'),
-    path('test/', views.test, name='test'),
+    # path('test/', views.test, name='test'),
     path('about/', views.about, name='about'),
     path('register/', views.RegisterView.as_view(), name='register'),
     path('logout/', views.logout_user, name='logout'),
     path('pdf/', views.getpdf, name='pdf'),
     path('pdf/', views.getpdf, name='pdf'),
+    path('send_mail/', views.send_email, name="send_mail"),
+
 ]
+
