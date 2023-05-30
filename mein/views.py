@@ -7,6 +7,7 @@ from authentification.forms import LoginForm, RegisterForm
 from shop.models import *
 from mein.forms import *
 
+
 def index(request):
     return render(request, "index.html")
 
@@ -26,11 +27,13 @@ def kozm(request):
 def about(request):
     return render(request, "about-us.html")
 
+
 from django.shortcuts import render
 from django.views.generic import TemplateView
+
+
 def home(request):
     return render(request, 'home.html')
-
 
 
 from django.core.mail import BadHeaderError, send_mail
@@ -47,16 +50,16 @@ def send_email(request):
         form = ContactForm(request.POST)
 
         if form.is_valid():
-
             subject = form.cleaned_data['subject']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
             try:
                 send_mail(subject, email, message, ['daryawaspd@gmail.com'])
+                send_email(request)
+                return redirect('index')
             except BadHeaderError:
-                return redirect('index.html')
-
-            render(request, "email.html")
+                send_email(request)
+                return redirect('index')
     else:
         form = ContactForm()
     return render(request, "email.html", {

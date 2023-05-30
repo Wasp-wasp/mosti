@@ -25,8 +25,8 @@
 </body>
 <div class="container">
 
-<form method="post" action=".">
-
+<form method="POST" action=".">
+    {% csrf_token %}
     <div class="col-md-5 col-lg-4 order-md-last">
          <input type="hidden" name="csrfmiddlewaretoken" value="K5fZsQsCxL3ajAPyAV7SftFGkwzLZicDQfDu6685svg39DRvG0XuTvxsOUnJtao4">
     <div class="d-flex flex-column flex-sm-row w-100 gap-3">

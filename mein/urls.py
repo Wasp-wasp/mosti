@@ -25,7 +25,6 @@ from mein import views as user_views
 urlpatterns = [
                   path('', views.index, name='index'),
                   path('admin/', admin.site.urls),
-                  path('logout/', views.logout_user, name='logout'),
                   path('login/', views.login_user, name='login'),
                   path('about/', views.about, name='about'),
                   path('test/', views.test, name='test'),
@@ -36,8 +35,9 @@ urlpatterns = [
                   path('pdf', views.getpdf, name='pdf'),
                   path('shedule', views.shedule, name='shedule'),
                   path('send_mail/', views.send_email, name="send_mail"),
+                    path('logout/', views.logout_user, name='logout'),
 
-                  # path('auth/', include('authentification.urls')),
+    # path('auth/', include('authentification.urls')),
                   #
                   # path('<pk>/pdf', views.users_render_pdf_view, name='user_pdf_view'),
               ]

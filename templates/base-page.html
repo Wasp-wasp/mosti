@@ -34,12 +34,15 @@
     <li><a href="#" class="nav-link px-2 text-white">Контакты</a></li>
 
        {% if user.is_authenticated  %}
-            {{ user.username }}
+
             <li><a href="{% url 'test' %}" class="nav-link px-2 text-white">Услуги</a></li>
             <li><a href="{% url 'shedule' %}" class="nav-link px-2 text-white">Графики</a></li>
-            <a href="{% url 'logout' % }" style="height: 40px;">Выйти</a>
+             <p  class="nav-link px-2 text-white" style="color: white">  {{ user.username }}  </p>
+                <a class="nav-link px-2 text-white" href="{% url 'logout' %}">
+                    Выйти</a>
+
         {% else %}
-            <button type="button" class="btn btn-warning"><a  href="{% url 'login' %}"  style="height: 30px;"> Войти </a> </button>
+          <a  href="{% url 'login' %}" class="btn btn-outline-primary me-2 login" style="height: 40px;"> Войти </a>
            <!-- <button type="button" class="btn btn-primary"><a class="btn-primary" href=""> Регистрация </a></button>-->
         {% endif %}
   </ul>

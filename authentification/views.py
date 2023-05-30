@@ -2,8 +2,9 @@ from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from authentification.forms import LoginForm, RegisterForm
-from shop.models import *
+from shop.models import Object
 from forms import ContactForm
+
 
 from authentification.forms import ContactForm
 from django.core.mail import send_mail
@@ -27,7 +28,14 @@ def about(request):
     return render(request, "about-us.html")
 
 
+def test(request):
+    obj = Object.objects.all()
+    return render(request, "test.html", {"obj": obj})
 
+
+def pdf(request):
+    product = Object.objects.all()
+    return render(request, {"product": product})
 
 
 def login_user(request):
@@ -122,21 +130,21 @@ def send_email(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
 
-        if form.is_valid():
 
+        if form.is_valid():
+            subject = request.POST.get("subject", "")
+            message = request.POST.get("message", "")
             subject = form.cleaned_data['subject']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
 
-            send_mail(subject, email, message, ['daryawaspd@gmail.com'])
+            send_mail(subject, email , message, ['daryawaspd@gmail.com'])
             return redirect('index.html')
     else:
         form = ContactForm()
     return render(request, "email.html", {
         'form': form
     })
-
-
 # subject = request.POST.get("subject", "")
 # message = request.POST.get("message", "")
 # from_email = request.POST.get("from_email", "")
@@ -150,5 +158,3 @@ def send_email(request):
 #     # In reality we'd use a form class
 #     # to get proper validation errors.
 #     return HttpResponse("Make sure all fields are entered and valid.")
-def index(request):
-    return render(request, "index.html")

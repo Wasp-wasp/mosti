@@ -90,7 +90,7 @@
 
 
 <main class="form-signin w-100 m-auto">
-  <form method="post" action="{% url 'login' %}">
+  <form method="post" action="{% url 'login' %}" style="margin: 90px 30px">
     {% csrf_token %}
     <h2>{{ attention }}</h2>
      {% for error in login_form.non_field_errors %}
@@ -118,18 +118,18 @@
         <button type="submit" class="request-quote-btn">Log In</button>&ndash;&gt;-->
 
    <!-- <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
 
-    <div class="form-floating">
+    <div class="form-floating" style=" margin: 10px 0px">
       <input type="text" class="form-control form-input" id="id_username"  name="username" placeholder="name@example.com" required>
       <label for="id_username" >Логин</label>
     </div>
     <div class="form-floating">
       <input type="password" class="form-control form-input" id="id_password"  name="password" placeholder="Password" required>
-      <label for="id_password">Password</label>
+      <label for="id_password">Пароль</label>
     </div>
-    <button  type="submit" class="request-quote-btn" >Sign in</button>
-    <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
+    <button  type="submit" class="btn btn-primary rounded-pill px-3" style=" margin: 10px 0px">Войти</button>
+
   </form>
 </main>
 
