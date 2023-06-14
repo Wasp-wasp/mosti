@@ -22,6 +22,8 @@ def km(request):
 
 def kozm(request):
     return render(request, "kozm.html")
+def most1(request):
+    return render(request, "most1.html")
 
 
 def about(request):

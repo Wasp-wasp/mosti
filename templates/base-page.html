@@ -35,7 +35,7 @@
 
        {% if user.is_authenticated  %}
 
-            <li><a href="{% url 'test' %}" class="nav-link px-2 text-white">Услуги</a></li>
+            <li><a href="{% url 'test' %}" class="nav-link px-2 text-white">Мосты</a></li>
             <li><a href="{% url 'shedule' %}" class="nav-link px-2 text-white">Графики</a></li>
              <p  class="nav-link px-2 text-white" style="color: white">  {{ user.username }}  </p>
                 <a class="nav-link px-2 text-white" href="{% url 'logout' %}">

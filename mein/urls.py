@@ -35,7 +35,8 @@ urlpatterns = [
                   path('pdf', views.getpdf, name='pdf'),
                   path('shedule', views.shedule, name='shedule'),
                   path('send_mail/', views.send_email, name="send_mail"),
-                    path('logout/', views.logout_user, name='logout'),
+                path('logout/', views.logout_user, name='logout'),
+                path('most1/', views.most1, name='most1'),
 
     # path('auth/', include('authentification.urls')),
                   #
